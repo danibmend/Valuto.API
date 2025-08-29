@@ -1,4 +1,8 @@
-﻿using System;
+﻿using JesusEmNos.Domain.DTOs.Contato;
+using JesusEmNos.Domain.DTOs.Endereco;
+using JesusEmNos.Domain.DTOs.Indicador;
+using JesusEmNos.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +12,15 @@ namespace JesusEmNos.Domain.DTOs.Voluntario
 {
     public class VoluntarioAtualizarDTO
     {
+        public long Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Cpf { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public IndicadorDTO? Sexo { get; set; }
+        public string? UrlFoto { get; set; }
+
+        public List<VoluntarioContatoAtualizarDTO> Contatos { get; set; } = new();
+        public EnderecoAtualizarDTO? Endereco { get; set; }
+        public IndicadorDTO? Igreja { get; set; }
     }
 }

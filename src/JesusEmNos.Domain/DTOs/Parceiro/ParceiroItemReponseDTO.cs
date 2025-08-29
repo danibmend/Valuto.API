@@ -8,5 +8,11 @@ namespace JesusEmNos.Domain.DTOs.Parceiro
 {
     public class ParceiroItemReponseDTO
     {
+        public long Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Cnpj { get; set; }
+        public string? NomeResponsavel { get; set; }
+        public string? CpfResponsavel { get; set; }
+        public string? UrlFoto { get; set; }
     }
 }

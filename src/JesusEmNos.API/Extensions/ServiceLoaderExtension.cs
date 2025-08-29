@@ -1,4 +1,6 @@
-﻿using JesusEmNos.Domain.DomainTypes.Options;
+﻿using JesusEmNos.API.Mapping.Base;
+using JesusEmNos.Application.Mappings.Base;
+using JesusEmNos.Domain.DomainTypes.Options;
 using JesusEmNos.Domain.Interfaces.Repositories;
 using JesusEmNos.Infrastructure.Repositories;
 
@@ -11,6 +13,7 @@ namespace JesusEmNos.API.Extensions
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddAutoMapper(cfg => { }, typeof(MappingDTOProfiles).Assembly, typeof(MappingRequestProfile).Assembly);
             services.Configure<DatabaseConfigurationOptions>(configuration.GetSection(nameof(DatabaseConfigurationOptions)));
         }
 

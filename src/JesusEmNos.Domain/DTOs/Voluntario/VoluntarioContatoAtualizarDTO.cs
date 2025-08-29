@@ -1,4 +1,4 @@
-﻿using JesusEmNos.Domain.DTOs.Base;
+﻿using JesusEmNos.Domain.DTOs.Contato;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 
 namespace JesusEmNos.Domain.DTOs.Voluntario
 {
-    public class VoluntarioListaResponseDTO : BaseListaRetornoDTO<VoluntarioItemResponseDTO>
+    public class VoluntarioContatoAtualizarDTO
     {
+        public long Id { get; set; }
+        public ContatoDTO? Contato { get; set; }
     }
 }

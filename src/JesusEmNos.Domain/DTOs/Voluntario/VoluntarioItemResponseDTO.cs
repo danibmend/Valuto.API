@@ -1,4 +1,6 @@
-﻿using System;
+﻿using JesusEmNos.Domain.DTOs.Endereco;
+using JesusEmNos.Domain.DTOs.Indicador;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,11 @@ namespace JesusEmNos.Domain.DTOs.Voluntario
 {
     public class VoluntarioItemResponseDTO
     {
+        public string? Nome { get; set; }
+        public string? Cpf { get; set; }
+        public DateTime DataNascimento { get; set; }
+        public IndicadorResponseDTO? Sexo { get; set; }
+        public string? UrlFoto { get; set; }
+        public IndicadorResponseDTO? Igreja { get; set; }
     }
 }

@@ -10,9 +10,12 @@
     <Folder Include="Factories\" />
     <Folder Include="Interfaces\Factories\" />
     <Folder Include="Interfaces\Services\" />
-    <Folder Include="Mappings\Base\" />
     <Folder Include="Services\Base\" />
     <Folder Include="Validators\Base\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
   </ItemGroup>
 
 </Project>

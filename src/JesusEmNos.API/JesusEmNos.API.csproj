@@ -22,12 +22,12 @@
   <ItemGroup>
     <Folder Include="Controllers\Base\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\JesusEmNos.Application\JesusEmNos.Application.csproj" />
     <ProjectReference Include="..\JesusEmNos.Infrastructure\JesusEmNos.Infrastructure.csproj" />
   </ItemGroup>
 

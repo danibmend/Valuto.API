@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace JesusEmNos.Domain.DTOs.Indicador
 {
-    public class IndicadorDTO
+    public class IndicadorBaseDTO
     {
         public long Id { get; set; }
+        public long TipoIndicadorId { get; set; }
     }
 }

@@ -8,5 +8,6 @@ namespace JesusEmNos.Domain.DTOs.Municipio
 {
     public class MunicipioDTO
     {
+        public long Id { get; set; }
     }
 }

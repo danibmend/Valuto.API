@@ -8,5 +8,8 @@ namespace JesusEmNos.Domain.DTOs.Estado
 {
     public class EstadoResponseDTO
     {
+        public long Id { get; set; }
+        public string? Sigla { get; set; }
+        public string? Nome { get; set; }
     }
 }
