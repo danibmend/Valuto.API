@@ -1,4 +1,5 @@
 using JesusEmNos.API.Extensions;
+using JesusEmNos.Domain.Middlewares;
 using JesusEmNos.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,20 +19,24 @@ builder.Services.AddDbContext<JesusEmNosContext>(opt =>
 });
 
 
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
 builder.Services.LoadConfigOptions(builder.Configuration);
+builder.Services.LoadServices();
+builder.Services.LoadApiServices();
+builder.Services.LoadFactories();
+builder.Services.LoadRepositories();
+builder.Services.LoadValidators();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+app.UseCors(opt => opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
