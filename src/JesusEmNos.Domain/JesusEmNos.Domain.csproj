@@ -7,14 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
     <Folder Include="Formats\" />
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Interfaces\Providers\" />
-    <Folder Include="Interfaces\Validators\Base\" />
+    <Folder Include="Interfaces\Validators\Endereco\" />
+    <Folder Include="Interfaces\Validators\Indicador\" />
+    <Folder Include="Interfaces\Validators\Localidade\" />
+    <Folder Include="Interfaces\Validators\ParceiroContato\" />
+    <Folder Include="Interfaces\Validators\Parceiro\" />
+    <Folder Include="Interfaces\Validators\SolicitacaoParceiro\" />
+    <Folder Include="Interfaces\Validators\SolicitacaoVoluntario\" />
+    <Folder Include="Interfaces\Validators\VoluntarioContato\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.4" />

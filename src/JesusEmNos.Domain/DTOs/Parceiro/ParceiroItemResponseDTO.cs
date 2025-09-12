@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JesusEmNos.Domain.DTOs.Parceiro
 {
-    public class ParceiroItemReponseDTO
+    public class ParceiroItemResponseDTO
     {
         public long Id { get; set; }
         public string? Nome { get; set; }

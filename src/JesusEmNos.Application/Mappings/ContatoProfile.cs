@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using JesusEmNos.Domain.DTOs.Contato;
+using JesusEmNos.Domain.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +14,11 @@ namespace JesusEmNos.Application.Mappings
         public ContatoProfile()
         {
             #region DTOToEntity
-
+            CreateProjection<ContatoDTO, Contato>();
             #endregion
 
             #region EntityToDTO
-            
+            CreateProjection<Contato, ContatoResponseDTO>();
             #endregion
         }
     }

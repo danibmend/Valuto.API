@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JesusEmNos.Domain.DTOs.Parceiro
 {
-    public class ParceiroListaResponseDTO : BaseListaRetornoDTO<ParceiroItemReponseDTO>
+    public class ParceiroListaResponseDTO : BaseListaRetornoDTO<ParceiroItemResponseDTO>
     {
     }
 }

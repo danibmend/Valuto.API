@@ -25,6 +25,7 @@ builder.Services.LoadApiServices();
 builder.Services.LoadFactories();
 builder.Services.LoadRepositories();
 builder.Services.LoadValidators();
+builder.Services.LoadValidatorsRules(); 
 
 var app = builder.Build();
 

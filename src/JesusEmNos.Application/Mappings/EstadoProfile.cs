@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using JesusEmNos.Domain.DTOs.Estado;
+using JesusEmNos.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +18,7 @@ namespace JesusEmNos.Application.Mappings
             #endregion
 
             #region EntityToDTO
-
+            CreateProjection<Estado, EstadoResponseDTO>();
             #endregion
         }
     }

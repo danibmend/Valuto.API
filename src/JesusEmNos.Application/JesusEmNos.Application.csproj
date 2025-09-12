@@ -9,13 +9,23 @@
   <ItemGroup>
     <Folder Include="Factories\" />
     <Folder Include="Interfaces\Factories\" />
-    <Folder Include="Interfaces\Services\" />
-    <Folder Include="Services\Base\" />
-    <Folder Include="Validators\Base\" />
+    <Folder Include="Validators\Endereco\" />
+    <Folder Include="Validators\Localidade\" />
+    <Folder Include="Validators\VoluntarioContato\" />
+    <Folder Include="Validators\Indicador\" />
+    <Folder Include="Validators\SolicitacaoVoluntario\" />
+    <Folder Include="Validators\SolicitacaoParceiro\" />
+    <Folder Include="Validators\Parceiro\" />
+    <Folder Include="Validators\ParceiroContato\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JesusEmNos.Domain\JesusEmNos.Domain.csproj" />
   </ItemGroup>
 
 </Project>

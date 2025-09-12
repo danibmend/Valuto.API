@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JesusEmNos.Domain.DTOs.Indicador
+namespace JesusEmNos.Domain.DTOs.Rules
 {
-    public class IndicadorBaseDTO
+    public class IndicadorRulesDTO
     {
         public long Id { get; set; }
         public long TipoIndicadorId { get; set; }

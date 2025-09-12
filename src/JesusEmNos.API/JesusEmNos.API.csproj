@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\Base\" />
+    <Folder Include="Controllers\0-Base\" />
     <Folder Include="Helpers\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Models\" />

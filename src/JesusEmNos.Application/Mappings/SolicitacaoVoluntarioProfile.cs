@@ -1,9 +1,6 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using JesusEmNos.Domain.DTOs.SolicitacaoVoluntario;
+using JesusEmNos.Domain.Entities;
 
 namespace JesusEmNos.Application.Mappings
 {
@@ -12,11 +9,14 @@ namespace JesusEmNos.Application.Mappings
         public SolicitacaoVoluntarioProfile()
         {
             #region DTOToEntity
-
+            CreateProjection<SolicitacaoVoluntarioAtualizarDTO, SolicitacaoVoluntario>();
+            CreateProjection<SolicitacaoVoluntarioCadastroDTO, SolicitacaoVoluntario>();
             #endregion
 
             #region EntityToDTO
-
+            CreateProjection<SolicitacaoVoluntario, SolicitacaoVoluntarioResponseDTO>();
+            CreateProjection<SolicitacaoVoluntario, SolicitacaoVoluntarioItemResponseDTO>();
+            CreateProjection<SolicitacaoVoluntario, SolicitacaoVoluntarioListaResponseDTO>();
             #endregion
         }
     }

@@ -1,7 +1,14 @@
-﻿using JesusEmNos.API.Mapping.Base;
+﻿using FluentValidation;
+using JesusEmNos.API.Mapping.Base;
+using JesusEmNos.Application.Interfaces.Services;
 using JesusEmNos.Application.Mappings.Base;
+using JesusEmNos.Application.Services;
+using JesusEmNos.Application.Validators.Rules;
+using JesusEmNos.Application.Validators.Voluntario;
 using JesusEmNos.Domain.DomainTypes.Options;
+using JesusEmNos.Domain.DTOs.Voluntario;
 using JesusEmNos.Domain.Interfaces.Repositories;
+using JesusEmNos.Domain.Interfaces.Validators.Rules;
 using JesusEmNos.Infrastructure.Repositories;
 
 namespace JesusEmNos.API.Extensions
@@ -19,6 +26,16 @@ namespace JesusEmNos.API.Extensions
 
         public static void LoadServices(this IServiceCollection services)
         {
+            services.AddScoped<IEnderecoService, EnderecoService>();
+            services.AddScoped<ILocalidadeService, LocalidadeService>();
+            services.AddScoped<IIndicadorService, IndicadorService>();
+            services.AddScoped<IParceiroContatoService, ParceiroContatoService>();
+            services.AddScoped<IParceiroService, ParceiroService>();
+            services.AddScoped<ISolicitacaoParceiroService, SolicitacaoParceiroService>();
+            services.AddScoped<ISolicitacaoVoluntarioService, SolicitacaoVoluntarioService>();
+            services.AddScoped<IIndicadorService, TipoIndicadorService>();
+            services.AddScoped<IVoluntarioContatoService, VoluntarioContatoService>();
+            services.AddScoped<IVoluntarioService, VoluntarioService>();
         }
 
         public static void LoadApiServices(this IServiceCollection services)
@@ -46,6 +63,12 @@ namespace JesusEmNos.API.Extensions
 
         public static void LoadValidators(this IServiceCollection services)
         {
+            services.AddScoped<IValidator<VoluntarioCadastroDTO>, VoluntarioCadastroValidator>();
+        }
+
+        public static void LoadValidatorsRules(this IServiceCollection services)
+        {
+            services.AddScoped<IIndicadorCondizenteRule, IndicadorCondizenteRule>();
         }
 
     }
