@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Validators\ParceiroContato\**" />
+    <Compile Remove="Validators\Parceiro\**" />
+    <Compile Remove="Validators\SolicitacaoParceiro\**" />
+    <Compile Remove="Validators\SolicitacaoVoluntario\**" />
+    <Compile Remove="Validators\VoluntarioContato\**" />
+    <EmbeddedResource Remove="Validators\ParceiroContato\**" />
+    <EmbeddedResource Remove="Validators\Parceiro\**" />
+    <EmbeddedResource Remove="Validators\SolicitacaoParceiro\**" />
+    <EmbeddedResource Remove="Validators\SolicitacaoVoluntario\**" />
+    <EmbeddedResource Remove="Validators\VoluntarioContato\**" />
+    <None Remove="Validators\ParceiroContato\**" />
+    <None Remove="Validators\Parceiro\**" />
+    <None Remove="Validators\SolicitacaoParceiro\**" />
+    <None Remove="Validators\SolicitacaoVoluntario\**" />
+    <None Remove="Validators\VoluntarioContato\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\Factories\" />
+    <Folder Include="Factories\" />
+    <Folder Include="Validators\Endereco\" />
+    <Folder Include="Validators\Indicador\" />
+    <Folder Include="Validators\Localidade\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="FluentValidation" Version="12.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Valuto.Domain\Valuto.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
