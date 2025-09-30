@@ -4,9 +4,9 @@ using Valuto.Application.Interfaces.Services;
 using Valuto.Application.Mappings.Base;
 using Valuto.Application.Services;
 using Valuto.Application.Validators.Rules;
-using Valuto.Application.Validators.Voluntario;
+using Valuto.Application.Validators.Pessoa;
 using Valuto.Domain.DomainTypes.Options;
-using Valuto.Domain.DTOs.Voluntario;
+using Valuto.Domain.DTOs.Pessoa;
 using Valuto.Domain.Interfaces.Repositories;
 using Valuto.Domain.Interfaces.Validators.Rules;
 using Valuto.Infrastructure.Repositories;
@@ -29,13 +29,12 @@ namespace Valuto.API.Extensions
             services.AddScoped<IEnderecoService, EnderecoService>();
             services.AddScoped<ILocalidadeService, LocalidadeService>();
             services.AddScoped<IIndicadorService, IndicadorService>();
-            services.AddScoped<IParceiroContatoService, ParceiroContatoService>();
-            services.AddScoped<IParceiroService, ParceiroService>();
-            services.AddScoped<ISolicitacaoParceiroService, SolicitacaoParceiroService>();
-            services.AddScoped<ISolicitacaoVoluntarioService, SolicitacaoVoluntarioService>();
+            services.AddScoped<IJuridicoContatoService, JuridicoContatoService>();
+            services.AddScoped<IJuridicoService, JuridicoService>();
+            services.AddScoped<ISolicitacaoPessoaService, SolicitacaoPessoaService>();
             services.AddScoped<ITipoIndicadorService, TipoIndicadorService>();
-            services.AddScoped<IVoluntarioContatoService, VoluntarioContatoService>();
-            services.AddScoped<IVoluntarioService, VoluntarioService>();
+            services.AddScoped<IPessoaContatoService, PessoaContatoService>();
+            services.AddScoped<IPessoaService, PessoaService>();
         }
 
         public static void LoadApiServices(this IServiceCollection services)
@@ -52,18 +51,17 @@ namespace Valuto.API.Extensions
             services.AddScoped<IEstadoRepository, EstadoRepository>();
             services.AddScoped<IIndicadorRepository, IndicadorRepository>();
             services.AddScoped<IMunicipioRepository, MunicipioRepository>();
-            services.AddScoped<IParceiroContatoRepository, ParceiroContatoRepository>();
-            services.AddScoped<IParceiroRepository, ParceiroRepository>();
-            services.AddScoped<ISolicitacaoParceiroRepository, SolicitacaoParceiroRepository>();
-            services.AddScoped<ISolicitacaoVoluntarioRepository, SolicitacaoVoluntarioRepository>();
+            services.AddScoped<IJuridicoContatoRepository, JuridicoContatoRepository>();
+            services.AddScoped<IJuridicoRepository, JuridicoRepository>();
+            services.AddScoped<ISolicitacaoPessoaRepository, SolicitacaoPessoaRepository>();
             services.AddScoped<ITipoIndicadorRepository, TipoIndicadorRepository>();
-            services.AddScoped<IVoluntarioContatoRepository, VoluntarioContatoRepository>();
-            services.AddScoped<IVoluntarioRepository, VoluntarioRepository>();
+            services.AddScoped<IPessoaContatoRepository, PessoaContatoRepository>();
+            services.AddScoped<IPessoaRepository, PessoaRepository>();
         }
 
         public static void LoadValidators(this IServiceCollection services)
         {
-            services.AddScoped<IValidator<VoluntarioCadastroDTO>, VoluntarioCadastroValidator>();
+            services.AddScoped<IValidator<PessoaCadastroDTO>, PessoaCadastroValidator>();
         }
 
         public static void LoadValidatorsRules(this IServiceCollection services)

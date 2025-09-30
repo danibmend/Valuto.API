@@ -204,7 +204,7 @@ namespace Valuto.Infrastructure.Migrations
                     b.ToTable("MUNICIPIO", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Parceiro", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Juridico", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -241,9 +241,9 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("NOME_RESPONSAVEL");
 
-                    b.Property<long>("TipoParceiroId")
+                    b.Property<long>("TipoJuridicoId")
                         .HasColumnType("bigint")
-                        .HasColumnName("TIPO_PARCEIRO_ID");
+                        .HasColumnName("TIPO_Juridico_ID");
 
                     b.Property<string>("UrlFoto")
                         .HasMaxLength(250)
@@ -251,23 +251,23 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnName("URL_FOTO");
 
                     b.HasKey("Id")
-                        .HasName("PK_PARCEIRO");
+                        .HasName("PK_Juridico");
 
                     b.HasIndex("Cnpj")
                         .IsUnique()
-                        .HasDatabaseName("IX_PARCEIRO_CNPJ");
+                        .HasDatabaseName("IX_Juridico_CNPJ");
 
                     b.HasIndex("EnderecoId")
                         .IsUnique()
-                        .HasDatabaseName("IX_PARCEIRO_ENDERECO_ID");
+                        .HasDatabaseName("IX_Juridico_ENDERECO_ID");
 
-                    b.HasIndex("TipoParceiroId")
-                        .HasDatabaseName("IX_PARCEIRO_TIPO_PARCEIRO_ID");
+                    b.HasIndex("TipoJuridicoId")
+                        .HasDatabaseName("IX_Juridico_TIPO_Juridico_ID");
 
-                    b.ToTable("PARCEIRO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("Juridico", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.ParceiroContato", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.JuridicoContato", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -276,20 +276,20 @@ namespace Valuto.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("ParceiroId")
+                    b.Property<long>("JuridicoId")
                         .HasColumnType("bigint")
-                        .HasColumnName("PARCEIRO_ID");
+                        .HasColumnName("Juridico_ID");
 
                     b.HasKey("Id")
-                        .HasName("PK_PARCEIRO_CONTATO");
+                        .HasName("PK_Juridico_CONTATO");
 
-                    b.HasIndex("ParceiroId")
-                        .HasDatabaseName("IX_PARCEIRO_CONTATO_PARCEIRO_ID");
+                    b.HasIndex("JuridicoId")
+                        .HasDatabaseName("IX_Juridico_CONTATO_Juridico_ID");
 
-                    b.ToTable("PARCEIRO_CONTATO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("Juridico_CONTATO", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoParceiro", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoJuridico", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -390,9 +390,9 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("TIPO_ENDERECO_ID");
 
-                    b.Property<long>("TipoParceiroId")
+                    b.Property<long>("TipoJuridicoId")
                         .HasColumnType("bigint")
-                        .HasColumnName("TIPO_PARCEIRO_ID");
+                        .HasColumnName("TIPO_Juridico_ID");
 
                     b.Property<long>("TipoSolicitacaoId")
                         .HasColumnType("bigint")
@@ -404,27 +404,27 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnName("URL_FOTO");
 
                     b.HasKey("Id")
-                        .HasName("PK_SOLICITACAO_PARCEIRO");
+                        .HasName("PK_SOLICITACAO_Juridico");
 
                     b.HasIndex("MunicipioId")
-                        .HasDatabaseName("IX_SOLICITACAO_PARCEIRO_MUNICIPIO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Juridico_MUNICIPIO_ID");
 
                     b.HasIndex("SituacaoId")
-                        .HasDatabaseName("IX_SOLICITACAO_PARCEIRO_SITUACAO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Juridico_SITUACAO_ID");
 
                     b.HasIndex("TipoEnderecoId")
-                        .HasDatabaseName("IX_SOLICITACAO_PARCEIRO_TIPO_ENDERECO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Juridico_TIPO_ENDERECO_ID");
 
-                    b.HasIndex("TipoParceiroId")
-                        .HasDatabaseName("IX_SOLICITACAO_PARCEIRO_TIPO_PARCEIRO_ID");
+                    b.HasIndex("TipoJuridicoId")
+                        .HasDatabaseName("IX_SOLICITACAO_Juridico_TIPO_Juridico_ID");
 
                     b.HasIndex("TipoSolicitacaoId")
-                        .HasDatabaseName("IX_SOLICITACAO_PARCEIRO_TIPO_SOLICITACAO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Juridico_TIPO_SOLICITACAO_ID");
 
-                    b.ToTable("SOLICITACAO_PARCEIRO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("SOLICITACAO_Juridico", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoVoluntario", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoPessoa", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -524,27 +524,27 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnName("URL_FOTO");
 
                     b.HasKey("Id")
-                        .HasName("PK_SOLICITACAO_VOLUNTARIO");
+                        .HasName("PK_SOLICITACAO_Pessoa");
 
                     b.HasIndex("IgrejaId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_IGREJA_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_IGREJA_ID");
 
                     b.HasIndex("MunicipioId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_MUNICIPIO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_MUNICIPIO_ID");
 
                     b.HasIndex("SexoId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_SEXO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_SEXO_ID");
 
                     b.HasIndex("SituacaoId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_SITUACAO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_SITUACAO_ID");
 
                     b.HasIndex("TipoEnderecoId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_TIPO_ENDERECO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_TIPO_ENDERECO_ID");
 
                     b.HasIndex("TipoSolicitacaoId")
-                        .HasDatabaseName("IX_SOLICITACAO_VOLUNTARIO_TIPO_SOLICITACAO_ID");
+                        .HasDatabaseName("IX_SOLICITACAO_Pessoa_TIPO_SOLICITACAO_ID");
 
-                    b.ToTable("SOLICITACAO_VOLUNTARIO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("SOLICITACAO_Pessoa", "JESUS_EM_NOS_DEV");
                 });
 
             modelBuilder.Entity("Valuto.Domain.Entities.TipoIndicador", b =>
@@ -587,7 +587,7 @@ namespace Valuto.Infrastructure.Migrations
                     b.ToTable("TIPO_INDICADOR", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Voluntario", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Pessoa", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -630,26 +630,26 @@ namespace Valuto.Infrastructure.Migrations
                         .HasColumnName("URL_FOTO");
 
                     b.HasKey("Id")
-                        .HasName("PK_VOLUNTARIO");
+                        .HasName("PK_Pessoa");
 
                     b.HasIndex("Cpf")
                         .IsUnique()
-                        .HasDatabaseName("IX_VOLUNTARIO_CPF");
+                        .HasDatabaseName("IX_Pessoa_CPF");
 
                     b.HasIndex("EnderecoId")
                         .IsUnique()
-                        .HasDatabaseName("IX_VOLUNTARIO_ENDERECO_ID");
+                        .HasDatabaseName("IX_Pessoa_ENDERECO_ID");
 
                     b.HasIndex("IgrejaId")
-                        .HasDatabaseName("IX_VOLUNTARIO_IGREJA_ID");
+                        .HasDatabaseName("IX_Pessoa_IGREJA_ID");
 
                     b.HasIndex("SexoId")
-                        .HasDatabaseName("IX_VOLUNTARIO_SEXO_ID");
+                        .HasDatabaseName("IX_Pessoa_SEXO_ID");
 
-                    b.ToTable("VOLUNTARIO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("Pessoa", "JESUS_EM_NOS_DEV");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.VoluntarioContato", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.PessoaContato", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -658,17 +658,17 @@ namespace Valuto.Infrastructure.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
-                    b.Property<long>("VoluntarioId")
+                    b.Property<long>("PessoaId")
                         .HasColumnType("bigint")
-                        .HasColumnName("VOLUNTARIO_ID");
+                        .HasColumnName("Pessoa_ID");
 
                     b.HasKey("Id")
-                        .HasName("PK_VOLUNTARIO_CONTATO");
+                        .HasName("PK_Pessoa_CONTATO");
 
-                    b.HasIndex("VoluntarioId")
-                        .HasDatabaseName("IX_VOLUNTARIO_CONTATO_VOLUNTARIO_ID");
+                    b.HasIndex("PessoaId")
+                        .HasDatabaseName("IX_Pessoa_CONTATO_Pessoa_ID");
 
-                    b.ToTable("VOLUNTARIO_CONTATO", "JESUS_EM_NOS_DEV");
+                    b.ToTable("Pessoa_CONTATO", "JESUS_EM_NOS_DEV");
                 });
 
             modelBuilder.Entity("Valuto.Domain.Entities.Endereco", b =>
@@ -879,25 +879,25 @@ namespace Valuto.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Parceiro", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Juridico", b =>
                 {
                     b.HasOne("Valuto.Domain.Entities.Endereco", "Endereco")
                         .WithOne()
-                        .HasForeignKey("Valuto.Domain.Entities.Parceiro", "EnderecoId")
+                        .HasForeignKey("Valuto.Domain.Entities.Juridico", "EnderecoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_PARCEIRO_ENDERECO_ENDERECO_ID");
+                        .HasConstraintName("FK_Juridico_ENDERECO_ENDERECO_ID");
 
-                    b.HasOne("Valuto.Domain.Entities.Indicador", "TipoParceiro")
+                    b.HasOne("Valuto.Domain.Entities.Indicador", "TipoJuridico")
                         .WithMany()
-                        .HasForeignKey("TipoParceiroId")
+                        .HasForeignKey("TipoJuridicoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_PARCEIRO_INDICADOR_TIPO_PARCEIRO_ID");
+                        .HasConstraintName("FK_Juridico_INDICADOR_TIPO_Juridico_ID");
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("ParceiroId")
+                            b1.Property<long>("JuridicoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -924,12 +924,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("ParceiroId");
+                            b1.HasKey("JuridicoId");
 
-                            b1.ToTable("PARCEIRO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Juridico", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("ParceiroId");
+                                .HasForeignKey("JuridicoId");
                         });
 
                     b.Navigation("Endereco");
@@ -937,21 +937,21 @@ namespace Valuto.Infrastructure.Migrations
                     b.Navigation("Metadados")
                         .IsRequired();
 
-                    b.Navigation("TipoParceiro");
+                    b.Navigation("TipoJuridico");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.ParceiroContato", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.JuridicoContato", b =>
                 {
-                    b.HasOne("Valuto.Domain.Entities.Parceiro", "Parceiro")
+                    b.HasOne("Valuto.Domain.Entities.Juridico", "Juridico")
                         .WithMany("Contatos")
-                        .HasForeignKey("ParceiroId")
+                        .HasForeignKey("JuridicoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_PARCEIRO_CONTATO_PARCEIRO_PARCEIRO_ID");
+                        .HasConstraintName("FK_Juridico_CONTATO_Juridico_Juridico_ID");
 
                     b.OwnsOne("Valuto.Domain.ValueObjects.Contato", "Contato", b1 =>
                         {
-                            b1.Property<long>("ParceiroContatoId")
+                            b1.Property<long>("JuridicoContatoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<long>("ClassificacaoId")
@@ -965,13 +965,13 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasMaxLength(100)
                                 .HasColumnType("character varying(100)");
 
-                            b1.HasKey("ParceiroContatoId");
+                            b1.HasKey("JuridicoContatoId");
 
                             b1.HasIndex("ClassificacaoId");
 
                             b1.HasIndex("TipoContatoId");
 
-                            b1.ToTable("PARCEIRO_CONTATO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Juridico_CONTATO", "JESUS_EM_NOS_DEV");
 
                             b1.HasOne("Valuto.Domain.Entities.Indicador", "Classificacao")
                                 .WithMany()
@@ -980,7 +980,7 @@ namespace Valuto.Infrastructure.Migrations
                                 .IsRequired();
 
                             b1.WithOwner()
-                                .HasForeignKey("ParceiroContatoId");
+                                .HasForeignKey("JuridicoContatoId");
 
                             b1.HasOne("Valuto.Domain.Entities.Indicador", "TipoContato")
                                 .WithMany()
@@ -995,7 +995,7 @@ namespace Valuto.Infrastructure.Migrations
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("ParceiroContatoId")
+                            b1.Property<long>("JuridicoContatoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -1022,12 +1022,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("ParceiroContatoId");
+                            b1.HasKey("JuridicoContatoId");
 
-                            b1.ToTable("PARCEIRO_CONTATO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Juridico_CONTATO", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("ParceiroContatoId");
+                                .HasForeignKey("JuridicoContatoId");
                         });
 
                     b.Navigation("Contato")
@@ -1036,49 +1036,49 @@ namespace Valuto.Infrastructure.Migrations
                     b.Navigation("Metadados")
                         .IsRequired();
 
-                    b.Navigation("Parceiro");
+                    b.Navigation("Juridico");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoParceiro", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoJuridico", b =>
                 {
                     b.HasOne("Valuto.Domain.Entities.Municipio", "Municipio")
                         .WithMany()
                         .HasForeignKey("MunicipioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_PARCEIRO_MUNICIPIO_MUNICIPIO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Juridico_MUNICIPIO_MUNICIPIO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Situacao")
                         .WithMany()
                         .HasForeignKey("SituacaoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_PARCEIRO_INDICADOR_SITUACAO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Juridico_INDICADOR_SITUACAO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "TipoEndereco")
                         .WithMany()
                         .HasForeignKey("TipoEnderecoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_ENDERECO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Juridico_INDICADOR_TIPO_ENDERECO_ID");
 
-                    b.HasOne("Valuto.Domain.Entities.Indicador", "TipoParceiro")
+                    b.HasOne("Valuto.Domain.Entities.Indicador", "TipoJuridico")
                         .WithMany()
-                        .HasForeignKey("TipoParceiroId")
+                        .HasForeignKey("TipoJuridicoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_PARCEIRO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Juridico_INDICADOR_TIPO_Juridico_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "TipoSolicitacao")
                         .WithMany()
                         .HasForeignKey("TipoSolicitacaoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_SOLICITACAO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Juridico_INDICADOR_TIPO_SOLICITACAO_ID");
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("SolicitacaoParceiroId")
+                            b1.Property<long>("SolicitacaoJuridicoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -1105,12 +1105,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("SolicitacaoParceiroId");
+                            b1.HasKey("SolicitacaoJuridicoId");
 
-                            b1.ToTable("SOLICITACAO_PARCEIRO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("SOLICITACAO_Juridico", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("SolicitacaoParceiroId");
+                                .HasForeignKey("SolicitacaoJuridicoId");
                         });
 
                     b.Navigation("Metadados")
@@ -1122,58 +1122,58 @@ namespace Valuto.Infrastructure.Migrations
 
                     b.Navigation("TipoEndereco");
 
-                    b.Navigation("TipoParceiro");
+                    b.Navigation("TipoJuridico");
 
                     b.Navigation("TipoSolicitacao");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoVoluntario", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.SolicitacaoPessoa", b =>
                 {
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Igreja")
                         .WithMany()
                         .HasForeignKey("IgrejaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_INDICADOR_IGREJA_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_INDICADOR_IGREJA_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Municipio", "Municipio")
                         .WithMany()
                         .HasForeignKey("MunicipioId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_MUNICIPIO_MUNICIPIO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_MUNICIPIO_MUNICIPIO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Sexo")
                         .WithMany()
                         .HasForeignKey("SexoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_INDICADOR_SEXO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_INDICADOR_SEXO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Situacao")
                         .WithMany()
                         .HasForeignKey("SituacaoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_INDICADOR_SITUACAO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_INDICADOR_SITUACAO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "TipoEndereco")
                         .WithMany()
                         .HasForeignKey("TipoEnderecoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_INDICADOR_TIPO_ENDERECO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_INDICADOR_TIPO_ENDERECO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "TipoSolicitacao")
                         .WithMany()
                         .HasForeignKey("TipoSolicitacaoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_SOLICITACAO_VOLUNTARIO_INDICADOR_TIPO_SOLICITACAO_ID");
+                        .HasConstraintName("FK_SOLICITACAO_Pessoa_INDICADOR_TIPO_SOLICITACAO_ID");
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("SolicitacaoVoluntarioId")
+                            b1.Property<long>("SolicitacaoPessoaId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -1200,12 +1200,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("SolicitacaoVoluntarioId");
+                            b1.HasKey("SolicitacaoPessoaId");
 
-                            b1.ToTable("SOLICITACAO_VOLUNTARIO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("SOLICITACAO_Pessoa", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("SolicitacaoVoluntarioId");
+                                .HasForeignKey("SolicitacaoPessoaId");
                         });
 
                     b.Navigation("Igreja");
@@ -1267,32 +1267,32 @@ namespace Valuto.Infrastructure.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Voluntario", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Pessoa", b =>
                 {
                     b.HasOne("Valuto.Domain.Entities.Endereco", "Endereco")
                         .WithOne()
-                        .HasForeignKey("Valuto.Domain.Entities.Voluntario", "EnderecoId")
+                        .HasForeignKey("Valuto.Domain.Entities.Pessoa", "EnderecoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_VOLUNTARIO_ENDERECO_ENDERECO_ID");
+                        .HasConstraintName("FK_Pessoa_ENDERECO_ENDERECO_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Igreja")
                         .WithMany()
                         .HasForeignKey("IgrejaId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_VOLUNTARIO_INDICADOR_IGREJA_ID");
+                        .HasConstraintName("FK_Pessoa_INDICADOR_IGREJA_ID");
 
                     b.HasOne("Valuto.Domain.Entities.Indicador", "Sexo")
                         .WithMany()
                         .HasForeignKey("SexoId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired()
-                        .HasConstraintName("FK_VOLUNTARIO_INDICADOR_SEXO_ID");
+                        .HasConstraintName("FK_Pessoa_INDICADOR_SEXO_ID");
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("VoluntarioId")
+                            b1.Property<long>("PessoaId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -1319,12 +1319,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("VoluntarioId");
+                            b1.HasKey("PessoaId");
 
-                            b1.ToTable("VOLUNTARIO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Pessoa", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("VoluntarioId");
+                                .HasForeignKey("PessoaId");
                         });
 
                     b.Navigation("Endereco");
@@ -1337,18 +1337,18 @@ namespace Valuto.Infrastructure.Migrations
                     b.Navigation("Sexo");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.VoluntarioContato", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.PessoaContato", b =>
                 {
-                    b.HasOne("Valuto.Domain.Entities.Voluntario", "Voluntario")
+                    b.HasOne("Valuto.Domain.Entities.Pessoa", "Pessoa")
                         .WithMany("Contatos")
-                        .HasForeignKey("VoluntarioId")
+                        .HasForeignKey("PessoaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("FK_VOLUNTARIO_CONTATO_VOLUNTARIO_VOLUNTARIO_ID");
+                        .HasConstraintName("FK_Pessoa_CONTATO_Pessoa_Pessoa_ID");
 
                     b.OwnsOne("Valuto.Domain.ValueObjects.Contato", "Contato", b1 =>
                         {
-                            b1.Property<long>("VoluntarioContatoId")
+                            b1.Property<long>("PessoaContatoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<long>("ClassificacaoId")
@@ -1362,13 +1362,13 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasMaxLength(100)
                                 .HasColumnType("character varying(100)");
 
-                            b1.HasKey("VoluntarioContatoId");
+                            b1.HasKey("PessoaContatoId");
 
                             b1.HasIndex("ClassificacaoId");
 
                             b1.HasIndex("TipoContatoId");
 
-                            b1.ToTable("VOLUNTARIO_CONTATO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Pessoa_CONTATO", "JESUS_EM_NOS_DEV");
 
                             b1.HasOne("Valuto.Domain.Entities.Indicador", "Classificacao")
                                 .WithMany()
@@ -1383,7 +1383,7 @@ namespace Valuto.Infrastructure.Migrations
                                 .IsRequired();
 
                             b1.WithOwner()
-                                .HasForeignKey("VoluntarioContatoId");
+                                .HasForeignKey("PessoaContatoId");
 
                             b1.Navigation("Classificacao");
 
@@ -1392,7 +1392,7 @@ namespace Valuto.Infrastructure.Migrations
 
                     b.OwnsOne("Valuto.Domain.Entities.Base.Metadados", "Metadados", b1 =>
                         {
-                            b1.Property<long>("VoluntarioContatoId")
+                            b1.Property<long>("PessoaContatoId")
                                 .HasColumnType("bigint");
 
                             b1.Property<DateTime>("DataAtualizacao")
@@ -1419,12 +1419,12 @@ namespace Valuto.Infrastructure.Migrations
                                 .HasColumnType("bigint")
                                 .HasColumnName("USUARIO_REMOCAO_ID");
 
-                            b1.HasKey("VoluntarioContatoId");
+                            b1.HasKey("PessoaContatoId");
 
-                            b1.ToTable("VOLUNTARIO_CONTATO", "JESUS_EM_NOS_DEV");
+                            b1.ToTable("Pessoa_CONTATO", "JESUS_EM_NOS_DEV");
 
                             b1.WithOwner()
-                                .HasForeignKey("VoluntarioContatoId");
+                                .HasForeignKey("PessoaContatoId");
                         });
 
                     b.Navigation("Contato")
@@ -1433,7 +1433,7 @@ namespace Valuto.Infrastructure.Migrations
                     b.Navigation("Metadados")
                         .IsRequired();
 
-                    b.Navigation("Voluntario");
+                    b.Navigation("Pessoa");
                 });
 
             modelBuilder.Entity("Valuto.Domain.Entities.Estado", b =>
@@ -1441,12 +1441,12 @@ namespace Valuto.Infrastructure.Migrations
                     b.Navigation("Municipios");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Parceiro", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Juridico", b =>
                 {
                     b.Navigation("Contatos");
                 });
 
-            modelBuilder.Entity("Valuto.Domain.Entities.Voluntario", b =>
+            modelBuilder.Entity("Valuto.Domain.Entities.Pessoa", b =>
                 {
                     b.Navigation("Contatos");
                 });

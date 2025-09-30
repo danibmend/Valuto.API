@@ -158,7 +158,7 @@ namespace Valuto.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SOLICITACAO_PARCEIRO",
+                name: "SOLICITACAO_Juridico",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
@@ -181,7 +181,7 @@ namespace Valuto.Infrastructure.Migrations
                     TIPO_ENDERECO_ID = table.Column<long>(type: "bigint", nullable: false),
                     MUNICIPIO_ID = table.Column<long>(type: "bigint", nullable: false),
                     DATA_RESOLUCAO = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
-                    TIPO_PARCEIRO_ID = table.Column<long>(type: "bigint", nullable: false),
+                    TIPO_Juridico_ID = table.Column<long>(type: "bigint", nullable: false),
                     TIPO_SOLICITACAO_ID = table.Column<long>(type: "bigint", nullable: false),
                     SITUACAO_ID = table.Column<long>(type: "bigint", nullable: false),
                     DATA_CRIACAO = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
@@ -193,37 +193,37 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SOLICITACAO_PARCEIRO", x => x.ID);
+                    table.PrimaryKey("PK_SOLICITACAO_Juridico", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_PARCEIRO_INDICADOR_SITUACAO_ID",
+                        name: "FK_SOLICITACAO_Juridico_INDICADOR_SITUACAO_ID",
                         column: x => x.SITUACAO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_ENDERECO_ID",
+                        name: "FK_SOLICITACAO_Juridico_INDICADOR_TIPO_ENDERECO_ID",
                         column: x => x.TIPO_ENDERECO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_PARCEIRO_ID",
-                        column: x => x.TIPO_PARCEIRO_ID,
+                        name: "FK_SOLICITACAO_Juridico_INDICADOR_TIPO_Juridico_ID",
+                        column: x => x.TIPO_Juridico_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_PARCEIRO_INDICADOR_TIPO_SOLICITACAO_ID",
+                        name: "FK_SOLICITACAO_Juridico_INDICADOR_TIPO_SOLICITACAO_ID",
                         column: x => x.TIPO_SOLICITACAO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_PARCEIRO_MUNICIPIO_MUNICIPIO_ID",
+                        name: "FK_SOLICITACAO_Juridico_MUNICIPIO_MUNICIPIO_ID",
                         column: x => x.MUNICIPIO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "MUNICIPIO",
@@ -232,7 +232,7 @@ namespace Valuto.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "SOLICITACAO_VOLUNTARIO",
+                name: "SOLICITACAO_Pessoa",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
@@ -265,44 +265,44 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_SOLICITACAO_VOLUNTARIO", x => x.ID);
+                    table.PrimaryKey("PK_SOLICITACAO_Pessoa", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_INDICADOR_IGREJA_ID",
+                        name: "FK_SOLICITACAO_Pessoa_INDICADOR_IGREJA_ID",
                         column: x => x.IGREJA_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_INDICADOR_SEXO_ID",
+                        name: "FK_SOLICITACAO_Pessoa_INDICADOR_SEXO_ID",
                         column: x => x.SEXO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_INDICADOR_SITUACAO_ID",
+                        name: "FK_SOLICITACAO_Pessoa_INDICADOR_SITUACAO_ID",
                         column: x => x.SITUACAO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_INDICADOR_TIPO_ENDERECO_ID",
+                        name: "FK_SOLICITACAO_Pessoa_INDICADOR_TIPO_ENDERECO_ID",
                         column: x => x.TIPO_ENDERECO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_INDICADOR_TIPO_SOLICITACAO_ID",
+                        name: "FK_SOLICITACAO_Pessoa_INDICADOR_TIPO_SOLICITACAO_ID",
                         column: x => x.TIPO_SOLICITACAO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_SOLICITACAO_VOLUNTARIO_MUNICIPIO_MUNICIPIO_ID",
+                        name: "FK_SOLICITACAO_Pessoa_MUNICIPIO_MUNICIPIO_ID",
                         column: x => x.MUNICIPIO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "MUNICIPIO",
@@ -311,7 +311,7 @@ namespace Valuto.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PARCEIRO",
+                name: "Juridico",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
@@ -323,7 +323,7 @@ namespace Valuto.Infrastructure.Migrations
                     CPF_RESPONSAVEL = table.Column<string>(type: "character varying(11)", maxLength: 11, nullable: false),
                     URL_FOTO = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: true),
                     ENDERECO_ID = table.Column<long>(type: "bigint", nullable: false),
-                    TIPO_PARCEIRO_ID = table.Column<long>(type: "bigint", nullable: false),
+                    TIPO_Juridico_ID = table.Column<long>(type: "bigint", nullable: false),
                     DATA_CRIACAO = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DATA_ATUALIZACAO = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     DATA_REMOCAO = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
@@ -333,17 +333,17 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PARCEIRO", x => x.ID);
+                    table.PrimaryKey("PK_Juridico", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_PARCEIRO_ENDERECO_ENDERECO_ID",
+                        name: "FK_Juridico_ENDERECO_ENDERECO_ID",
                         column: x => x.ENDERECO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "ENDERECO",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PARCEIRO_INDICADOR_TIPO_PARCEIRO_ID",
-                        column: x => x.TIPO_PARCEIRO_ID,
+                        name: "FK_Juridico_INDICADOR_TIPO_Juridico_ID",
+                        column: x => x.TIPO_Juridico_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
@@ -351,7 +351,7 @@ namespace Valuto.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "VOLUNTARIO",
+                name: "Pessoa",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
@@ -373,23 +373,23 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VOLUNTARIO", x => x.ID);
+                    table.PrimaryKey("PK_Pessoa", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_ENDERECO_ENDERECO_ID",
+                        name: "FK_Pessoa_ENDERECO_ENDERECO_ID",
                         column: x => x.ENDERECO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "ENDERECO",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_INDICADOR_IGREJA_ID",
+                        name: "FK_Pessoa_INDICADOR_IGREJA_ID",
                         column: x => x.IGREJA_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_INDICADOR_SEXO_ID",
+                        name: "FK_Pessoa_INDICADOR_SEXO_ID",
                         column: x => x.SEXO_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
@@ -398,13 +398,13 @@ namespace Valuto.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "PARCEIRO_CONTATO",
+                name: "Juridico_CONTATO",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    PARCEIRO_ID = table.Column<long>(type: "bigint", nullable: false),
+                    Juridico_ID = table.Column<long>(type: "bigint", nullable: false),
                     Contato_Valor = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Contato_TipoContatoId = table.Column<long>(type: "bigint", nullable: false),
                     Contato_ClassificacaoId = table.Column<long>(type: "bigint", nullable: false),
@@ -417,38 +417,38 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PARCEIRO_CONTATO", x => x.ID);
+                    table.PrimaryKey("PK_Juridico_CONTATO", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_PARCEIRO_CONTATO_INDICADOR_Contato_ClassificacaoId",
+                        name: "FK_Juridico_CONTATO_INDICADOR_Contato_ClassificacaoId",
                         column: x => x.Contato_ClassificacaoId,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PARCEIRO_CONTATO_INDICADOR_Contato_TipoContatoId",
+                        name: "FK_Juridico_CONTATO_INDICADOR_Contato_TipoContatoId",
                         column: x => x.Contato_TipoContatoId,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_PARCEIRO_CONTATO_PARCEIRO_PARCEIRO_ID",
-                        column: x => x.PARCEIRO_ID,
+                        name: "FK_Juridico_CONTATO_Juridico_Juridico_ID",
+                        column: x => x.Juridico_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
-                        principalTable: "PARCEIRO",
+                        principalTable: "Juridico",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "VOLUNTARIO_CONTATO",
+                name: "Pessoa_CONTATO",
                 schema: "JESUS_EM_NOS_DEV",
                 columns: table => new
                 {
                     ID = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    VOLUNTARIO_ID = table.Column<long>(type: "bigint", nullable: false),
+                    Pessoa_ID = table.Column<long>(type: "bigint", nullable: false),
                     Contato_Valor = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     Contato_TipoContatoId = table.Column<long>(type: "bigint", nullable: false),
                     Contato_ClassificacaoId = table.Column<long>(type: "bigint", nullable: false),
@@ -461,26 +461,26 @@ namespace Valuto.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_VOLUNTARIO_CONTATO", x => x.ID);
+                    table.PrimaryKey("PK_Pessoa_CONTATO", x => x.ID);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_CONTATO_INDICADOR_Contato_ClassificacaoId",
+                        name: "FK_Pessoa_CONTATO_INDICADOR_Contato_ClassificacaoId",
                         column: x => x.Contato_ClassificacaoId,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_CONTATO_INDICADOR_Contato_TipoContatoId",
+                        name: "FK_Pessoa_CONTATO_INDICADOR_Contato_TipoContatoId",
                         column: x => x.Contato_TipoContatoId,
                         principalSchema: "JESUS_EM_NOS_DEV",
                         principalTable: "INDICADOR",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_VOLUNTARIO_CONTATO_VOLUNTARIO_VOLUNTARIO_ID",
-                        column: x => x.VOLUNTARIO_ID,
+                        name: "FK_Pessoa_CONTATO_Pessoa_Pessoa_ID",
+                        column: x => x.Pessoa_ID,
                         principalSchema: "JESUS_EM_NOS_DEV",
-                        principalTable: "VOLUNTARIO",
+                        principalTable: "Pessoa",
                         principalColumn: "ID",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -545,107 +545,107 @@ namespace Valuto.Infrastructure.Migrations
                 column: "ESTADO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_CNPJ",
+                name: "IX_Juridico_CNPJ",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO",
+                table: "Juridico",
                 column: "CNPJ",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_ENDERECO_ID",
+                name: "IX_Juridico_ENDERECO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO",
+                table: "Juridico",
                 column: "ENDERECO_ID",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_TIPO_PARCEIRO_ID",
+                name: "IX_Juridico_TIPO_Juridico_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO",
-                column: "TIPO_PARCEIRO_ID");
+                table: "Juridico",
+                column: "TIPO_Juridico_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_CONTATO_Contato_ClassificacaoId",
+                name: "IX_Juridico_CONTATO_Contato_ClassificacaoId",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO_CONTATO",
+                table: "Juridico_CONTATO",
                 column: "Contato_ClassificacaoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_CONTATO_Contato_TipoContatoId",
+                name: "IX_Juridico_CONTATO_Contato_TipoContatoId",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO_CONTATO",
+                table: "Juridico_CONTATO",
                 column: "Contato_TipoContatoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_PARCEIRO_CONTATO_PARCEIRO_ID",
+                name: "IX_Juridico_CONTATO_Juridico_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "PARCEIRO_CONTATO",
-                column: "PARCEIRO_ID");
+                table: "Juridico_CONTATO",
+                column: "Juridico_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_PARCEIRO_MUNICIPIO_ID",
+                name: "IX_SOLICITACAO_Juridico_MUNICIPIO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_PARCEIRO",
+                table: "SOLICITACAO_Juridico",
                 column: "MUNICIPIO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_PARCEIRO_SITUACAO_ID",
+                name: "IX_SOLICITACAO_Juridico_SITUACAO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_PARCEIRO",
+                table: "SOLICITACAO_Juridico",
                 column: "SITUACAO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_PARCEIRO_TIPO_ENDERECO_ID",
+                name: "IX_SOLICITACAO_Juridico_TIPO_ENDERECO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_PARCEIRO",
+                table: "SOLICITACAO_Juridico",
                 column: "TIPO_ENDERECO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_PARCEIRO_TIPO_PARCEIRO_ID",
+                name: "IX_SOLICITACAO_Juridico_TIPO_Juridico_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_PARCEIRO",
-                column: "TIPO_PARCEIRO_ID");
+                table: "SOLICITACAO_Juridico",
+                column: "TIPO_Juridico_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_PARCEIRO_TIPO_SOLICITACAO_ID",
+                name: "IX_SOLICITACAO_Juridico_TIPO_SOLICITACAO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_PARCEIRO",
+                table: "SOLICITACAO_Juridico",
                 column: "TIPO_SOLICITACAO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_IGREJA_ID",
+                name: "IX_SOLICITACAO_Pessoa_IGREJA_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "IGREJA_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_MUNICIPIO_ID",
+                name: "IX_SOLICITACAO_Pessoa_MUNICIPIO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "MUNICIPIO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_SEXO_ID",
+                name: "IX_SOLICITACAO_Pessoa_SEXO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "SEXO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_SITUACAO_ID",
+                name: "IX_SOLICITACAO_Pessoa_SITUACAO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "SITUACAO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_TIPO_ENDERECO_ID",
+                name: "IX_SOLICITACAO_Pessoa_TIPO_ENDERECO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "TIPO_ENDERECO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SOLICITACAO_VOLUNTARIO_TIPO_SOLICITACAO_ID",
+                name: "IX_SOLICITACAO_Pessoa_TIPO_SOLICITACAO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "SOLICITACAO_VOLUNTARIO",
+                table: "SOLICITACAO_Pessoa",
                 column: "TIPO_SOLICITACAO_ID");
 
             migrationBuilder.CreateIndex(
@@ -663,75 +663,75 @@ namespace Valuto.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_CPF",
+                name: "IX_Pessoa_CPF",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO",
+                table: "Pessoa",
                 column: "CPF",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_ENDERECO_ID",
+                name: "IX_Pessoa_ENDERECO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO",
+                table: "Pessoa",
                 column: "ENDERECO_ID",
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_IGREJA_ID",
+                name: "IX_Pessoa_IGREJA_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO",
+                table: "Pessoa",
                 column: "IGREJA_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_SEXO_ID",
+                name: "IX_Pessoa_SEXO_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO",
+                table: "Pessoa",
                 column: "SEXO_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_CONTATO_Contato_ClassificacaoId",
+                name: "IX_Pessoa_CONTATO_Contato_ClassificacaoId",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO_CONTATO",
+                table: "Pessoa_CONTATO",
                 column: "Contato_ClassificacaoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_CONTATO_Contato_TipoContatoId",
+                name: "IX_Pessoa_CONTATO_Contato_TipoContatoId",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO_CONTATO",
+                table: "Pessoa_CONTATO",
                 column: "Contato_TipoContatoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_VOLUNTARIO_CONTATO_VOLUNTARIO_ID",
+                name: "IX_Pessoa_CONTATO_Pessoa_ID",
                 schema: "JESUS_EM_NOS_DEV",
-                table: "VOLUNTARIO_CONTATO",
-                column: "VOLUNTARIO_ID");
+                table: "Pessoa_CONTATO",
+                column: "Pessoa_ID");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PARCEIRO_CONTATO",
+                name: "Juridico_CONTATO",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(
-                name: "SOLICITACAO_PARCEIRO",
+                name: "SOLICITACAO_Juridico",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(
-                name: "SOLICITACAO_VOLUNTARIO",
+                name: "SOLICITACAO_Pessoa",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(
-                name: "VOLUNTARIO_CONTATO",
+                name: "Pessoa_CONTATO",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(
-                name: "PARCEIRO",
+                name: "Juridico",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(
-                name: "VOLUNTARIO",
+                name: "Pessoa",
                 schema: "JESUS_EM_NOS_DEV");
 
             migrationBuilder.DropTable(

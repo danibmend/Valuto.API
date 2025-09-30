@@ -39,18 +39,14 @@ namespace Valuto.Infrastructure
 
         public IMunicipioRepository Municipio => _serviceProvider.GetRequiredService<IMunicipioRepository>();
 
-        public IParceiroContatoRepository ParceiroContato => _serviceProvider.GetRequiredService<IParceiroContatoRepository>();
+        public IJuridicoContatoRepository JuridicoContato => _serviceProvider.GetRequiredService<IJuridicoContatoRepository>();
 
-        public IParceiroRepository Parceiro => _serviceProvider.GetRequiredService<IParceiroRepository>();
-
-        public ISolicitacaoParceiroRepository SolicitacaoParceiro => _serviceProvider.GetRequiredService<ISolicitacaoParceiroRepository>();
-
-        public ISolicitacaoVoluntarioRepository SolicitacaoVoluntario => _serviceProvider.GetRequiredService<ISolicitacaoVoluntarioRepository>();
+        public IJuridicoRepository Juridico => _serviceProvider.GetRequiredService<IJuridicoRepository>();
 
         public ITipoIndicadorRepository TipoIndicador => _serviceProvider.GetRequiredService<ITipoIndicadorRepository>();
 
-        public IVoluntarioContatoRepository VoluntarioContato => _serviceProvider.GetRequiredService<IVoluntarioContatoRepository>();
+        public IPessoaContatoRepository PessoaContato => _serviceProvider.GetRequiredService<IPessoaContatoRepository>();
 
-        public IVoluntarioRepository Voluntario => _serviceProvider.GetRequiredService<IVoluntarioRepository>();
+        public IPessoaRepository Pessoa => _serviceProvider.GetRequiredService<IPessoaRepository>();
     }
 }

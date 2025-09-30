@@ -21,7 +21,7 @@ namespace Valuto.Domain.Enums
         Sexo = 5,
         [Description("Tipo de Solicitação")]
         TipoSolicitacao = 6,
-        [Description("Tipo de Parceiro")]
-        TipoParceiro = 7,
+        [Description("Tipo de Juridico")]
+        TipoJuridico = 7,
     }
 }

@@ -7,16 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\Validators\SolicitacaoJuridico\**" />
+    <Compile Remove="Interfaces\Validators\SolicitacaoPessoa\**" />
+    <EmbeddedResource Remove="Interfaces\Validators\SolicitacaoJuridico\**" />
+    <EmbeddedResource Remove="Interfaces\Validators\SolicitacaoPessoa\**" />
+    <None Remove="Interfaces\Validators\SolicitacaoJuridico\**" />
+    <None Remove="Interfaces\Validators\SolicitacaoPessoa\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Interfaces\Services\" />
     <Folder Include="Interfaces\Providers\" />
     <Folder Include="Interfaces\Validators\Endereco\" />
     <Folder Include="Interfaces\Validators\Indicador\" />
     <Folder Include="Interfaces\Validators\Localidade\" />
-    <Folder Include="Interfaces\Validators\ParceiroContato\" />
-    <Folder Include="Interfaces\Validators\Parceiro\" />
-    <Folder Include="Interfaces\Validators\SolicitacaoParceiro\" />
-    <Folder Include="Interfaces\Validators\SolicitacaoVoluntario\" />
-    <Folder Include="Interfaces\Validators\VoluntarioContato\" />
+    <Folder Include="Interfaces\Validators\JuridicoContato\" />
+    <Folder Include="Interfaces\Validators\Juridico\" />
+    <Folder Include="Interfaces\Validators\PessoaContato\" />
     <Folder Include="Formats\" />
   </ItemGroup>
 

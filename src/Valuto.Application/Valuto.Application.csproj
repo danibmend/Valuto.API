@@ -7,21 +7,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Validators\ParceiroContato\**" />
-    <Compile Remove="Validators\Parceiro\**" />
-    <Compile Remove="Validators\SolicitacaoParceiro\**" />
-    <Compile Remove="Validators\SolicitacaoVoluntario\**" />
-    <Compile Remove="Validators\VoluntarioContato\**" />
-    <EmbeddedResource Remove="Validators\ParceiroContato\**" />
-    <EmbeddedResource Remove="Validators\Parceiro\**" />
-    <EmbeddedResource Remove="Validators\SolicitacaoParceiro\**" />
-    <EmbeddedResource Remove="Validators\SolicitacaoVoluntario\**" />
-    <EmbeddedResource Remove="Validators\VoluntarioContato\**" />
-    <None Remove="Validators\ParceiroContato\**" />
-    <None Remove="Validators\Parceiro\**" />
-    <None Remove="Validators\SolicitacaoParceiro\**" />
-    <None Remove="Validators\SolicitacaoVoluntario\**" />
-    <None Remove="Validators\VoluntarioContato\**" />
+    <Compile Remove="Validators\JuridicoContato\**" />
+    <Compile Remove="Validators\Juridico\**" />
+    <Compile Remove="Validators\SolicitacaoJuridico\**" />
+    <Compile Remove="Validators\SolicitacaoPessoa\**" />
+    <Compile Remove="Validators\PessoaContato\**" />
+    <EmbeddedResource Remove="Validators\JuridicoContato\**" />
+    <EmbeddedResource Remove="Validators\Juridico\**" />
+    <EmbeddedResource Remove="Validators\SolicitacaoJuridico\**" />
+    <EmbeddedResource Remove="Validators\SolicitacaoPessoa\**" />
+    <EmbeddedResource Remove="Validators\PessoaContato\**" />
+    <None Remove="Validators\JuridicoContato\**" />
+    <None Remove="Validators\Juridico\**" />
+    <None Remove="Validators\SolicitacaoJuridico\**" />
+    <None Remove="Validators\SolicitacaoPessoa\**" />
+    <None Remove="Validators\PessoaContato\**" />
   </ItemGroup>
 
   <ItemGroup>

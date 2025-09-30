@@ -13,13 +13,11 @@ namespace Valuto.Domain.Interfaces
         IEstadoRepository Estado { get; }
         IIndicadorRepository Indicador { get; }
         IMunicipioRepository Municipio { get; }
-        IParceiroContatoRepository ParceiroContato { get; }
-        IParceiroRepository Parceiro { get; }
-        ISolicitacaoParceiroRepository SolicitacaoParceiro { get; }
-        ISolicitacaoVoluntarioRepository SolicitacaoVoluntario { get; }
+        IJuridicoContatoRepository JuridicoContato { get; }
+        IJuridicoRepository Juridico { get; }
         ITipoIndicadorRepository TipoIndicador { get; }
-        IVoluntarioContatoRepository VoluntarioContato { get; }
-        IVoluntarioRepository Voluntario { get; }
+        IPessoaContatoRepository PessoaContato { get; }
+        IPessoaRepository Pessoa { get; }
 
 
         Task BeginTransactionAsync();
